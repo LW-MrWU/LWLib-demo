@@ -1,8 +1,8 @@
 package com.gameclub.demo.command;
 
 import com.gameclub.demo.MainPlugin;
-import com.gameclub.model.command.BaseCommand;
-import com.gameclub.model.enumModel.BaseCommandSenderType;
+import com.gameclub.lwlib.model.command.BaseCommand;
+import com.gameclub.lwlib.model.enumModel.BaseCommandSenderType;
 import org.bukkit.command.CommandSender;
 
 import java.util.List;

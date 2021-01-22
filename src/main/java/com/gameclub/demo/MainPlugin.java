@@ -2,8 +2,8 @@ package com.gameclub.demo;
 
 import com.gameclub.demo.command.MainCommand;
 import com.gameclub.demo.config.DefaultConfig;
-import com.gameclub.model.enumModel.BaseSysMsgEnum;
-import com.gameclub.service.basic.service.plugin.BasePlugin;
+import com.gameclub.lwlib.model.enumModel.BaseSysMsgEnum;
+import com.gameclub.lwlib.service.basic.service.plugin.BasePlugin;
 
 /**
  * @author lw
