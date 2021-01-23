@@ -23,8 +23,7 @@ public class MainPlugin extends BasePlugin {
 
         initCommand();
         //成功加载提示
-        String successLoad = getBaseLanguageService().getLanguage(BaseSysMsgEnum.SUCCESS_LOAD.name(), BaseSysMsgEnum.SUCCESS_LOAD.getValue());
-        getBaseLogService().info(successLoad);
+        getBaseLogService().infoByLanguage(BaseSysMsgEnum.SUCCESS_LOAD.name(), BaseSysMsgEnum.SUCCESS_LOAD.getValue());
 
         return true;
     }

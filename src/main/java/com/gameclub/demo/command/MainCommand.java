@@ -24,7 +24,7 @@ public class MainCommand extends BaseCommand {
 
     public MainCommand(String commandName) {
         super(MainPlugin.getInstance(), commandName);
-        addSubCommands(HelpCommand.getInstance(), ACommand.getInstance());
+        addSubCommands(HelpCommand.getInstance(), ReloadAll.getInstance(), ACommand.getInstance());
     }
 
     @Override
