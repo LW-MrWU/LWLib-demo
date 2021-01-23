@@ -2,6 +2,8 @@ package com.gameclub.demo.command;
 
 import com.gameclub.demo.MainPlugin;
 import com.gameclub.lwlib.model.command.BaseCommand;
+import com.gameclub.lwlib.model.config.BaseConfig;
+import com.gameclub.lwlib.model.config.BaseLanguageConfig;
 import com.gameclub.lwlib.model.enumModel.BaseCommandSenderType;
 import org.bukkit.command.CommandSender;
 
@@ -23,14 +25,17 @@ public class ACommand extends BaseCommand {
     }
     public ACommand(String commandName) {
         super(commandName);
-        addSubCommands(Bcommand.getInstance());
+        //addSubCommands(Bcommand.getInstance());
         setUsage("&e/lw acommand 测试命令");
-        setPermission("lw.admin");
+        //setPermission("lw.admin");
     }
 
     @Override
     public boolean onCommand(CommandSender commandSender, String[] args) {
-        showHelp(commandSender, MainPlugin.getInstance());
+        //showHelp(commandSender, MainPlugin.getInstance());
+        BaseConfig baseConfig = MainPlugin.getInstance().getBaseConfigService().getConfig(BaseLanguageConfig.getConfigName());
+        baseConfig.setProperties("CONFIG_RELOAD_SUCCESS", null);
+        baseConfig.saveConfig();
         return true;
     }
 

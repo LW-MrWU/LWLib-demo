@@ -16,5 +16,6 @@ public class DefaultConfig extends BaseDefaultConfig {
     @Override
     protected void loadDefaultConfig() {
         System.out.println("DefaultConfig loadDefaultConfig");
+        TestConfig testConfig = new TestConfig(MainPlugin.getInstance());
     }
 }

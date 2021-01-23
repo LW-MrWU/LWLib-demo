@@ -2,6 +2,8 @@ package com.gameclub.demo;
 
 import com.gameclub.demo.command.MainCommand;
 import com.gameclub.demo.config.DefaultConfig;
+import com.gameclub.demo.config.TestConfig;
+import com.gameclub.lwlib.model.config.BaseConfig;
 import com.gameclub.lwlib.model.enumModel.BaseSysMsgEnum;
 import com.gameclub.lwlib.service.basic.service.plugin.BasePlugin;
 
@@ -25,6 +27,7 @@ public class MainPlugin extends BasePlugin {
         //成功加载提示
         getBaseLogService().infoByLanguage(BaseSysMsgEnum.SUCCESS_LOAD.name(), BaseSysMsgEnum.SUCCESS_LOAD.getValue());
 
+        initTest();
         return true;
     }
 
@@ -53,5 +56,11 @@ public class MainPlugin extends BasePlugin {
     private void initCommand(){
         MainCommand mainCommand = MainCommand.getInstance();
         this.registerCommand(mainCommand);
+    }
+
+    private void initTest(){
+        BaseConfig baseConfig = getBaseConfigService().getConfig(TestConfig.getConfigName());
+        String msg = baseConfig.getFileConfiguration().getString("test");
+        getBaseLogService().info(msg);
     }
 }
