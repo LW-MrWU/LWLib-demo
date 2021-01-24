@@ -16,7 +16,6 @@ public class TestConfig extends BaseConfig {
     }
 
     public void loadConfig() {
-        MainPlugin.getInstance().getBaseLogService().info("TestConfig:"+TestConfig.configName);
     }
 
     protected boolean createConfig() {

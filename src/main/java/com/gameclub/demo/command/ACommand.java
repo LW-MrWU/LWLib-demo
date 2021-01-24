@@ -5,6 +5,7 @@ import com.gameclub.lwlib.model.command.BaseCommand;
 import com.gameclub.lwlib.model.config.BaseConfig;
 import com.gameclub.lwlib.model.config.BaseLanguageConfig;
 import com.gameclub.lwlib.model.enumModel.BaseCommandSenderType;
+import com.gameclub.lwlib.service.basic.service.plugin.BasePlugin;
 import org.bukkit.command.CommandSender;
 
 import java.util.List;
@@ -15,22 +16,11 @@ import java.util.List;
  * @description TODO
  */
 public class ACommand extends BaseCommand {
-    private static ACommand aCommand;
-
-    public static ACommand getInstance(){
-        if(aCommand == null){
-            aCommand = new ACommand("acommand");
-        }
-        return aCommand;
-    }
-    public ACommand(String commandName) {
-        super(commandName);
+    public ACommand() {
+        super("acommand");
         //addSubCommands(Bcommand.getInstance());
-        setUsage("&e/lw acommand 测试命令");
-        //setPermission("lw.admin");
     }
 
-    @Override
     public boolean onCommand(CommandSender commandSender, String[] args) {
         //showHelp(commandSender, MainPlugin.getInstance());
         BaseConfig baseConfig = MainPlugin.getInstance().getBaseConfigService().getConfig(BaseLanguageConfig.getConfigName());
@@ -39,18 +29,23 @@ public class ACommand extends BaseCommand {
         return true;
     }
 
-    @Override
     public List<String> onTabComplete(CommandSender commandSender, String[] args) {
         return null;
     }
 
-    @Override
-    public String getPermissionNode() {
-        return this.getPermission();
+    public BasePlugin getBasePlugin() {
+        return MainPlugin.getInstance();
     }
 
-    @Override
-    public BaseCommandSenderType commandSenderType() {
+    public String getPermissionNode() {
+        return "lw.admin";
+    }
+
+    public BaseCommandSenderType getCommandSenderType() {
         return null;
+    }
+
+    public String getUsageHelp() {
+        return "&e/lw acommand 测试命令";
     }
 }

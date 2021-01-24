@@ -2,6 +2,7 @@ package com.gameclub.demo.command;
 
 import com.gameclub.lwlib.model.command.BaseCommand;
 import com.gameclub.lwlib.model.enumModel.BaseCommandSenderType;
+import com.gameclub.lwlib.service.basic.service.plugin.BasePlugin;
 import org.bukkit.command.CommandSender;
 
 import java.util.List;
@@ -12,37 +13,32 @@ import java.util.List;
  * @description TODO
  */
 public class Bcommand extends BaseCommand {
-    private static Bcommand bCommand;
 
-    public static Bcommand getInstance(){
-        if(bCommand == null){
-            bCommand = new Bcommand("bcommand");
-        }
-        return bCommand;
+    public Bcommand() {
+        super("bcommand");
     }
 
-    public Bcommand(String commandName) {
-        super(commandName);
-        setUsage("&e/lw acommand bcommand 测试命令B");
-    }
-
-    @Override
     public boolean onCommand(CommandSender commandSender, String[] args) {
         return false;
     }
 
-    @Override
     public List<String> onTabComplete(CommandSender commandSender, String[] args) {
         return null;
     }
 
-    @Override
+    public BasePlugin getBasePlugin() {
+        return null;
+    }
+
     public String getPermissionNode() {
         return null;
     }
 
-    @Override
-    public BaseCommandSenderType commandSenderType() {
+    public BaseCommandSenderType getCommandSenderType() {
         return null;
+    }
+
+    public String getUsageHelp() {
+        return "&e/lw acommand bcommand 测试命令B";
     }
 }

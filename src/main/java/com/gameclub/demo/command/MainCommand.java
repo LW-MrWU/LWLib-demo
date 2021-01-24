@@ -3,6 +3,7 @@ package com.gameclub.demo.command;
 import com.gameclub.demo.MainPlugin;
 import com.gameclub.lwlib.model.command.BaseCommand;
 import com.gameclub.lwlib.model.enumModel.BaseCommandSenderType;
+import com.gameclub.lwlib.service.basic.service.plugin.BasePlugin;
 import org.bukkit.command.CommandSender;
 
 import java.util.List;
@@ -23,28 +24,32 @@ public class MainCommand extends BaseCommand {
     }
 
     public MainCommand(String commandName) {
-        super(MainPlugin.getInstance(), commandName);
-        addSubCommands(HelpCommand.getInstance(), ReloadAll.getInstance(), ACommand.getInstance());
+        super(commandName);
+        addSubCommands(new TestCommand(), new HelpCommand(), new ReloadAll(), new ACommand());
     }
 
-    @Override
     public boolean onCommand(CommandSender commandSender, String[] args) {
         showHelp(commandSender, MainPlugin.getInstance());
         return true;
     }
 
-    @Override
     public List<String> onTabComplete(CommandSender commandSender, String[] args) {
         return null;
     }
 
-    @Override
+    public BasePlugin getBasePlugin() {
+        return MainPlugin.getInstance();
+    }
+
     public String getPermissionNode() {
         return null;
     }
 
-    @Override
-    public BaseCommandSenderType commandSenderType() {
+    public BaseCommandSenderType getCommandSenderType() {
+        return null;
+    }
+
+    public String getUsageHelp() {
         return null;
     }
 }

@@ -3,6 +3,7 @@ package com.gameclub.demo;
 import com.gameclub.demo.command.MainCommand;
 import com.gameclub.demo.config.DefaultConfig;
 import com.gameclub.demo.config.TestConfig;
+import com.gameclub.demo.listener.PlayerListener;
 import com.gameclub.lwlib.model.config.BaseConfig;
 import com.gameclub.lwlib.model.enumModel.BaseSysMsgEnum;
 import com.gameclub.lwlib.service.basic.service.plugin.BasePlugin;
@@ -22,6 +23,8 @@ public class MainPlugin extends BasePlugin {
     public boolean enable() {
         mainPlugin = this;//初始化配置文件
         initConfig();
+
+        initListener();
 
         initCommand();
         //成功加载提示
@@ -46,6 +49,10 @@ public class MainPlugin extends BasePlugin {
         DefaultConfig defaultConfig = new DefaultConfig();
     }
 
+    private void initListener() {
+        registerListener(new PlayerListener());
+    }
+
     /**
      * 初始化命令
      * @author lw
@@ -55,12 +62,9 @@ public class MainPlugin extends BasePlugin {
      */
     private void initCommand(){
         MainCommand mainCommand = MainCommand.getInstance();
-        this.registerCommand(mainCommand);
+        registerCommand(mainCommand);
     }
 
     private void initTest(){
-        BaseConfig baseConfig = getBaseConfigService().getConfig(TestConfig.getConfigName());
-        String msg = baseConfig.getFileConfiguration().getString("test");
-        getBaseLogService().info(msg);
     }
 }
