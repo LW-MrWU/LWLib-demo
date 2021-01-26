@@ -1,32 +1,32 @@
-package com.gameclub.demo.command;
+package com.gameclub.demo.command.mysql;
 
 import com.gameclub.demo.MainPlugin;
 import com.gameclub.lwlib.model.command.BaseCommand;
 import com.gameclub.lwlib.model.enumModel.BaseCommandSenderType;
-import com.gameclub.lwlib.model.enumModel.MysqlDataTypeEnum;
 import com.gameclub.lwlib.service.basic.service.plugin.BasePlugin;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 /**
  * @author lw
- * @date 创建时间 2021/1/24 13:43
- * @description
+ * @date 创建时间 2021/1/26 15:29
+ * @description TODO
  */
-public class TestCommand extends BaseCommand {
-
-    public TestCommand() {
-        super("test");
+public class UpdateCommand extends BaseCommand {
+    public UpdateCommand() {
+        super("update");
     }
 
     public boolean onCommand(CommandSender commandSender, String[] strings) {
-        return false;
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("test1", "字符串测试2");
+        map.put("test2", 99);
+        map.put("test3", 222.512);
+        MainPlugin.getInstance().getBaseMysqlService().updateById("test",1l, map);
+        return true;
     }
 
     public List<String> onTabComplete(CommandSender commandSender, String[] strings) {

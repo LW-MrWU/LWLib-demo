@@ -1,32 +1,27 @@
-package com.gameclub.demo.command;
+package com.gameclub.demo.command.mysql;
 
 import com.gameclub.demo.MainPlugin;
 import com.gameclub.lwlib.model.command.BaseCommand;
 import com.gameclub.lwlib.model.enumModel.BaseCommandSenderType;
-import com.gameclub.lwlib.model.enumModel.MysqlDataTypeEnum;
 import com.gameclub.lwlib.service.basic.service.plugin.BasePlugin;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author lw
- * @date 创建时间 2021/1/24 13:43
- * @description
+ * @date 创建时间 2021/1/26 13:35
+ * @description TODO
  */
-public class TestCommand extends BaseCommand {
-
-    public TestCommand() {
-        super("test");
+public class MysqlCommand extends BaseCommand {
+    public MysqlCommand() {
+        super("mysql", "sql");
+        addSubCommands(new CreateTableCommand(), new InsertCommand(), new SelectCommand(), new UpdateCommand());
     }
 
     public boolean onCommand(CommandSender commandSender, String[] strings) {
-        return false;
+        showHelp(commandSender, MainPlugin.getInstance());
+        return true;
     }
 
     public List<String> onTabComplete(CommandSender commandSender, String[] strings) {

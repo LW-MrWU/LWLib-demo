@@ -2,9 +2,8 @@ package com.gameclub.demo;
 
 import com.gameclub.demo.command.MainCommand;
 import com.gameclub.demo.config.DefaultConfig;
-import com.gameclub.demo.config.TestConfig;
 import com.gameclub.demo.listener.PlayerListener;
-import com.gameclub.lwlib.model.config.BaseConfig;
+import com.gameclub.demo.vault.VaultService;
 import com.gameclub.lwlib.model.enumModel.BaseSysMsgEnum;
 import com.gameclub.lwlib.service.basic.service.plugin.BasePlugin;
 
@@ -27,6 +26,12 @@ public class MainPlugin extends BasePlugin {
         initListener();
 
         initCommand();
+
+        if(!VaultService.getInstance().initVault()){
+            getBaseLogService().warning("未检测到vault");
+            return false;
+        }
+
         //成功加载提示
         getBaseLogService().infoByLanguage(BaseSysMsgEnum.SUCCESS_LOAD.name(), BaseSysMsgEnum.SUCCESS_LOAD.getValue());
 

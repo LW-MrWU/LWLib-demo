@@ -1,6 +1,7 @@
 package com.gameclub.demo.command;
 
 import com.gameclub.demo.MainPlugin;
+import com.gameclub.demo.command.mysql.MysqlCommand;
 import com.gameclub.lwlib.model.command.BaseCommand;
 import com.gameclub.lwlib.model.enumModel.BaseCommandSenderType;
 import com.gameclub.lwlib.service.basic.service.plugin.BasePlugin;
@@ -25,7 +26,7 @@ public class MainCommand extends BaseCommand {
 
     public MainCommand(String commandName) {
         super(commandName);
-        addSubCommands(new TestCommand(), new HelpCommand(), new ReloadAll(), new ACommand());
+        addSubCommands(new MysqlCommand(), new TestCommand(), new HelpCommand(), new ReloadAll(), new ACommand());
     }
 
     public boolean onCommand(CommandSender commandSender, String[] args) {

@@ -8,6 +8,7 @@ main: com.gameclub.demo.MainPlugin
 version: 1.0
 api-version: 1.16
 
+softdepend: [LWLib]
 load: startup
 database: false
 commands:

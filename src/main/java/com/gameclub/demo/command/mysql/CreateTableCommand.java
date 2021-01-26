@@ -1,4 +1,4 @@
-package com.gameclub.demo.command;
+package com.gameclub.demo.command.mysql;
 
 import com.gameclub.demo.MainPlugin;
 import com.gameclub.lwlib.model.command.BaseCommand;
@@ -6,27 +6,28 @@ import com.gameclub.lwlib.model.enumModel.BaseCommandSenderType;
 import com.gameclub.lwlib.model.enumModel.MysqlDataTypeEnum;
 import com.gameclub.lwlib.service.basic.service.plugin.BasePlugin;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 /**
  * @author lw
- * @date 创建时间 2021/1/24 13:43
- * @description
+ * @date 创建时间 2021/1/26 13:39
+ * @description TODO
  */
-public class TestCommand extends BaseCommand {
-
-    public TestCommand() {
-        super("test");
+public class CreateTableCommand extends BaseCommand {
+    public CreateTableCommand() {
+        super("createtable", "ct");
     }
 
     public boolean onCommand(CommandSender commandSender, String[] strings) {
-        return false;
+        Map<String, MysqlDataTypeEnum> map = new HashMap<String, MysqlDataTypeEnum>();
+        map.put("test1", MysqlDataTypeEnum.VARCHAR);
+        map.put("test2", MysqlDataTypeEnum.INT);
+        map.put("test3", MysqlDataTypeEnum.DOUBLE);
+        boolean flag = MainPlugin.getInstance().getBaseMysqlService().createTable("test", map);
+        return true;
     }
 
     public List<String> onTabComplete(CommandSender commandSender, String[] strings) {
@@ -46,6 +47,6 @@ public class TestCommand extends BaseCommand {
     }
 
     public String getUsageHelp() {
-        return null;
+        return "/sql ct -创建一个测试表单";
     }
 }
