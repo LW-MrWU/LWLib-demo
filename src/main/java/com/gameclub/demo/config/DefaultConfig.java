@@ -1,7 +1,7 @@
 package com.gameclub.demo.config;
 
 import com.gameclub.demo.MainPlugin;
-import com.gameclub.lwlib.model.config.BaseDefaultConfig;
+import vip.gameclub.lwlib.model.config.BaseDefaultConfig;
 
 /**
  * @author lw

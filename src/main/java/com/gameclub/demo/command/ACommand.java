@@ -2,17 +2,17 @@ package com.gameclub.demo.command;
 
 import com.gameclub.demo.MainPlugin;
 import com.gameclub.demo.vault.VaultService;
-import com.gameclub.lwlib.model.command.BaseCommand;
-import com.gameclub.lwlib.model.config.BaseConfig;
-import com.gameclub.lwlib.model.config.BaseLanguageConfig;
-import com.gameclub.lwlib.model.enumModel.BaseCommandSenderType;
-import com.gameclub.lwlib.service.basic.service.plugin.BasePlugin;
+import vip.gameclub.lwlib.model.command.BaseCommand;
+import vip.gameclub.lwlib.model.config.BaseConfig;
+import vip.gameclub.lwlib.model.config.BaseLanguageConfig;
+import vip.gameclub.lwlib.model.enumModel.BaseCommandSenderType;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.Team;
+import vip.gameclub.lwlib.service.plugin.BasePlugin;
 
 import java.util.Iterator;
 import java.util.List;

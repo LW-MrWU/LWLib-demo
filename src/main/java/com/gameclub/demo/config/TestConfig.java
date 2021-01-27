@@ -1,9 +1,7 @@
 package com.gameclub.demo.config;
 
-import com.gameclub.demo.MainPlugin;
-import com.gameclub.lwlib.model.config.BaseConfig;
-import com.gameclub.lwlib.service.basic.service.plugin.BasePlugin;
-import org.bukkit.configuration.file.FileConfiguration;
+import vip.gameclub.lwlib.model.config.BaseConfig;
+import vip.gameclub.lwlib.service.plugin.BasePlugin;
 
 /**
  * @author lw

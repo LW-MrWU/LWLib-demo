@@ -2,7 +2,7 @@ package com.gameclub.demo.listener;
 
 import com.gameclub.demo.MainPlugin;
 import com.gameclub.demo.config.PlayerConfig;
-import com.gameclub.lwlib.listener.BaseListener;
+import vip.gameclub.lwlib.listener.BaseListener;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerJoinEvent;

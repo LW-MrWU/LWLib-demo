@@ -1,8 +1,7 @@
 package com.gameclub.demo.config;
 
 import com.gameclub.demo.MainPlugin;
-import com.gameclub.lwlib.model.config.BaseConfig;
-import com.gameclub.lwlib.service.basic.service.plugin.BasePlugin;
+import vip.gameclub.lwlib.model.config.BaseConfig;
 
 import java.io.IOException;
 import java.util.ArrayList;

@@ -2,10 +2,10 @@ package com.gameclub.demo.command;
 
 import com.gameclub.demo.MainPlugin;
 import com.gameclub.demo.command.mysql.MysqlCommand;
-import com.gameclub.lwlib.model.command.BaseCommand;
-import com.gameclub.lwlib.model.enumModel.BaseCommandSenderType;
-import com.gameclub.lwlib.service.basic.service.plugin.BasePlugin;
+import vip.gameclub.lwlib.model.command.BaseCommand;
+import vip.gameclub.lwlib.model.enumModel.BaseCommandSenderType;
 import org.bukkit.command.CommandSender;
+import vip.gameclub.lwlib.service.plugin.BasePlugin;
 
 import java.util.List;
 

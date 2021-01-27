@@ -4,8 +4,8 @@ import com.gameclub.demo.command.MainCommand;
 import com.gameclub.demo.config.DefaultConfig;
 import com.gameclub.demo.listener.PlayerListener;
 import com.gameclub.demo.vault.VaultService;
-import com.gameclub.lwlib.model.enumModel.BaseSysMsgEnum;
-import com.gameclub.lwlib.service.basic.service.plugin.BasePlugin;
+import vip.gameclub.lwlib.model.enumModel.BaseSysMsgEnum;
+import vip.gameclub.lwlib.service.plugin.BasePlugin;
 
 /**
  * @author lw

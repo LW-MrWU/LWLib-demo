@@ -1,18 +1,11 @@
 package com.gameclub.demo.command;
 
-import com.gameclub.demo.MainPlugin;
-import com.gameclub.lwlib.model.command.BaseCommand;
-import com.gameclub.lwlib.model.enumModel.BaseCommandSenderType;
-import com.gameclub.lwlib.model.enumModel.MysqlDataTypeEnum;
-import com.gameclub.lwlib.service.basic.service.plugin.BasePlugin;
+import vip.gameclub.lwlib.model.command.BaseCommand;
+import vip.gameclub.lwlib.model.enumModel.BaseCommandSenderType;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
+import vip.gameclub.lwlib.service.plugin.BasePlugin;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author lw
